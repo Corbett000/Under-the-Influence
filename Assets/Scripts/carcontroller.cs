@@ -26,6 +26,7 @@ public class carcontroller : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("oiajsodifjaoaosidjfoaisjdfsidjfowe760389475029834750293845aisjdf");
         //spawn with random car skin
         carSpriteRenderer.sprite = carSkins[Random.Range(0,carSkins.Length-1)];
     }
@@ -34,6 +35,15 @@ public class carcontroller : MonoBehaviour
     void Update()
     {
     }
+
+    public void OnTriggerEnter(Collider other) {
+        Debug.Log("oiajsodifjaosidjfoaisjdf");
+    }
+
+    public void OnCollisionEnter(Collision collision) {
+        Debug.Log("oiajsodifjaoaosidjfoaisjdfsidjfoaisjdf");
+    }
+
 
     //frame rate independent stuff
     void FixedUpdate()
