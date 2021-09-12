@@ -19,6 +19,6 @@ public class carDrunkness : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Random.Range()
+        //Random.Range();
     }
 }
