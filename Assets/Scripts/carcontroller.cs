@@ -10,6 +10,7 @@ public class carcontroller : MonoBehaviour
     public float driftFactor = 0.95f;
     public Sprite[] carSkins;
     public GameObject[] woahNellyPrefabs;
+    public float velocityCap = 6f;
 
     float accelerationInput = 0;
     public float steeringInput = 0;
@@ -50,6 +51,14 @@ public class carcontroller : MonoBehaviour
 
     void ApplyEngineForce()
     {
+        if (accelerationInput > 0)
+        {
+            accelerationFactor = velocityCap - carRigidbody2D.velocity.magnitude;
+        }
+        else
+        {
+            accelerationFactor = velocityCap + carRigidbody2D.velocity.magnitude;
+        }
         //create a force
         Vector2 engineForceVector = transform.up * accelerationInput * accelerationFactor;
         //apply that force
