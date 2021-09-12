@@ -12,7 +12,7 @@ public class carcontroller : MonoBehaviour
     public Sprite[] carSkins;
 
     float accelerationInput = 0;
-    float steeringInput = 0;
+    public float steeringInput = 0;
     float rotationAngle = 0;
 
     //components 

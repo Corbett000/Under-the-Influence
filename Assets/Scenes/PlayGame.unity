@@ -1043,6 +1043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876b012cb24024202b5b675c3229da35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beerPrefab: {fileID: 4507738558531557302, guid: f4072b468077447dfa245cc2844bcf86, type: 3}
   tilemap: {fileID: 141446911}
   tilemap_walls: {fileID: 290841262}
   tilemap_overlay: {fileID: 138626189}
@@ -4249,6 +4250,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1584423847557547796, guid: df49106b4dfef4dd48b32549d279805d, type: 3}
+      propertyPath: turnFactor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584423847557547796, guid: df49106b4dfef4dd48b32549d279805d, type: 3}
+      propertyPath: velocityCap
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1584423847557547800, guid: df49106b4dfef4dd48b32549d279805d, type: 3}
       propertyPath: m_Name
       value: car
