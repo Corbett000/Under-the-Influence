@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class procedural : MonoBehaviour {
+    public GameObject beerPrefab;
+
     public Tilemap tilemap;
     public Tilemap tilemap_walls;
     public Tilemap tilemap_overlay;
@@ -65,6 +67,12 @@ public class procedural : MonoBehaviour {
                 var overl = (station==0&&xp<3)||(station==1&&xp!=2)||(station==2&&xp>1);
                 (empt?tilemap:overl?tilemap_overlay:tilemap_walls).SetTile(new Vector3Int(xp+x, yp+y, 0),tileset.GetTile(new Vector3Int(xp+6, yp-1-station*3, 0)));
             }
+        }
+        if (station==0 || station==1) {
+            Instantiate(beerPrefab, new Vector3((float)x+.5f, y, 0), Quaternion.identity);
+        }
+        if (station==2 || station==1) {
+            Instantiate(beerPrefab, new Vector3((float)x+3.5f, y, 0), Quaternion.identity);
         }
     }
     void placeAlleyAt(int x,int y) {

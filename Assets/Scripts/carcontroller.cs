@@ -8,8 +8,7 @@ public class carcontroller : MonoBehaviour
     public float accelerationFactor = 30.0f;
     public float turnFactor = 3.5f; 
     public float driftFactor = 0.95f;
-    public float forwardVelocityCap = 100f;
-    public float backwardVelocityCap = 50f;
+    public float velocityCap = 10f;
     public Sprite[] carSkins;
 
     float accelerationInput = 0;
@@ -28,6 +27,7 @@ public class carcontroller : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("oiajsodifjaoaosidjfoaisjdfsidjfowe760389475029834750293845aisjdf");
         //spawn with random car skin
         carSpriteRenderer.sprite = carSkins[Random.Range(0,carSkins.Length-1)];
     }
@@ -36,6 +36,15 @@ public class carcontroller : MonoBehaviour
     void Update()
     {
     }
+
+    public void OnTriggerEnter(Collider other) {
+        Debug.Log("oiajsodifjaosidjfoaisjdf");
+    }
+
+    public void OnCollisionEnter(Collision collision) {
+        Debug.Log("oiajsodifjaoaosidjfoaisjdfsidjfoaisjdf");
+    }
+
 
     //frame rate independent stuff
     void FixedUpdate()
@@ -49,11 +58,12 @@ public class carcontroller : MonoBehaviour
     {
         if (accelerationInput > 0)
         {
-            accelerationFactor = forwardVelocityCap - carRigidbody2D.velocity.magnitude;
+            accelerationFactor = velocityCap - carRigidbody2D.velocity.magnitude;
         }
         else
         {
-            accelerationFactor = backwardVelocityCap + carRigidbody2D.velocity.magnitude;
+            accelerationFactor = velocityCap - carRigidbody2D.velocity.magnitude;
+            
         }
         //create a force
         Vector2 engineForceVector = transform.up * accelerationInput * accelerationFactor;
