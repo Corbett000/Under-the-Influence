@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 434619473}
   - component: {fileID: 434619472}
   - component: {fileID: 434619471}
+  - component: {fileID: 434619474}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -206,6 +207,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &434619474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434619470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09154e36e101824f8d66462dc06a367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &485973384
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,8 +567,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: CREDITS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 978299031c352644d8b1277f39af5589, type: 2}
-  m_sharedMaterial: {fileID: -2060175919435548956, guid: 978299031c352644d8b1277f39af5589, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c64a3309faf6bbc49a91e777819401db, type: 2}
+  m_sharedMaterial: {fileID: 8775202419721894340, guid: c64a3309faf6bbc49a91e777819401db, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -579,8 +592,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
-  m_fontSizeBase: 11
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -688,8 +701,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PLAY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 978299031c352644d8b1277f39af5589, type: 2}
-  m_sharedMaterial: {fileID: -2060175919435548956, guid: 978299031c352644d8b1277f39af5589, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c64a3309faf6bbc49a91e777819401db, type: 2}
+  m_sharedMaterial: {fileID: 8775202419721894340, guid: c64a3309faf6bbc49a91e777819401db, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -713,8 +726,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
-  m_fontSizeBase: 11
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -943,8 +956,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: HIGH SCORE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 978299031c352644d8b1277f39af5589, type: 2}
-  m_sharedMaterial: {fileID: -2060175919435548956, guid: 978299031c352644d8b1277f39af5589, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c64a3309faf6bbc49a91e777819401db, type: 2}
+  m_sharedMaterial: {fileID: 8775202419721894340, guid: c64a3309faf6bbc49a91e777819401db, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -968,8 +981,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
-  m_fontSizeBase: 11
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -1100,7 +1113,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2075225754}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 434619474}
+        m_TargetAssemblyTypeName: sceneManager, Assembly-CSharp
+        m_MethodName: toPlayScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2075225754
 MonoBehaviour:
   m_ObjectHideFlags: 0
