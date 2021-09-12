@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bc77757feb996d5479fdf5b5bd1acf1b
+guid: 2e88f6ff71614b547b6322dd262639ce
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,7 +10,8 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Little Speakeasy
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: bc77757feb996d5479fdf5b5bd1acf1b, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
