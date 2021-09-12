@@ -28,7 +28,7 @@ public class carcontroller : MonoBehaviour
     void Start()
     {
         //spawn with random car skin
-        carSpriteRenderer.sprite = carSkins[Random.Range(0,carSkins.Length-1)];
+        carSpriteRenderer.sprite = carSkins[Random.Range(0,carSkins.Length)];
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class carcontroller : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D other) {
-        Instantiate(woahNellyPrefabs[Random.Range(0,woahNellyPrefabs.Length-1)], transform.position, Quaternion.identity);
+        Instantiate(woahNellyPrefabs[Random.Range(0,woahNellyPrefabs.Length)], transform.position, Quaternion.identity);
         Destroy(other.gameObject);
     }
 
