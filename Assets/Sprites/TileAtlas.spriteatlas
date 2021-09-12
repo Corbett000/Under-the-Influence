@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TileAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+    - {fileID: 2800000, guid: c7869e760101649498df199eb20fc773, type: 3}
+    - {fileID: 2800000, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
+    totalSpriteSurfaceArea: 39936
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -4998583175805728209, guid: c7869e760101649498df199eb20fc773, type: 3}
+  - {fileID: 7498883752154785644, guid: c7869e760101649498df199eb20fc773, type: 3}
+  - {fileID: 2304061769715766967, guid: c7869e760101649498df199eb20fc773, type: 3}
+  - {fileID: -6314530040796784220, guid: c7869e760101649498df199eb20fc773, type: 3}
+  - {fileID: -4437781744775313594, guid: c7869e760101649498df199eb20fc773, type: 3}
+  - {fileID: -6061287933809388122, guid: c7869e760101649498df199eb20fc773, type: 3}
+  - {fileID: -7027519845796032994, guid: c7869e760101649498df199eb20fc773, type: 3}
+  - {fileID: 9060095611447903928, guid: c7869e760101649498df199eb20fc773, type: 3}
+  - {fileID: 8289122598727087342, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
+  - {fileID: -6050716636164764437, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
+  - {fileID: 2869229499656389053, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
+  - {fileID: 5305004949948096171, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
+  - {fileID: -300420425869358296, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
+  - {fileID: 5147566866821746975, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
+  - {fileID: -41508701018630554, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
+  - {fileID: 1736521624799097057, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
+  - {fileID: 2868394442963845469, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
+  - {fileID: -5776607009312456184, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
+  - {fileID: -6880153849858141867, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
+  - {fileID: -8654092306962324153, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
+  - {fileID: -4729273119872132047, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
+  - {fileID: -8098086396101596366, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
+  - {fileID: -7062141868879593894, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
+  - {fileID: -6139803198461647427, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+  - {fileID: -7599174682473020552, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+  - {fileID: -5699031001833939293, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+  - {fileID: 4673351809948104143, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+  - {fileID: 8185973630163817110, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+  - {fileID: -875979768880334078, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+  - {fileID: 6918735685171488371, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+  - {fileID: -9073858347484482725, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+  - {fileID: 630666308945630358, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+  - {fileID: -7672597197164551542, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+  - {fileID: 3510357250930971947, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+  - {fileID: -1049028290447048985, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+  - {fileID: 7998116777423771079, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+  - {fileID: -1304248128392437305, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+  - {fileID: 4076920173941737853, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+  - {fileID: 4128317576625314501, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - tile_road_simple_0
+  - tile_road_simple_1
+  - tile_road_simple_2
+  - tile_road_simple_3
+  - tile_road_simple_4
+  - tile_road_simple_5
+  - tile_road_simple_6
+  - tile_road_simple_7
+  - tile_road_intersection_p2_13
+  - tile_road_intersection_p2_12
+  - tile_road_intersection_p2_11
+  - tile_road_intersection_p2_10
+  - tile_road_intersection_p2_14
+  - tile_road_intersection_p2_0
+  - tile_road_intersection_p2_1
+  - tile_road_intersection_p2_2
+  - tile_road_intersection_p2_3
+  - tile_road_intersection_p2_4
+  - tile_road_intersection_p2_5
+  - tile_road_intersection_p2_6
+  - tile_road_intersection_p2_7
+  - tile_road_intersection_p2_8
+  - tile_road_intersection_p2_9
+  - tile_road_intersection_9
+  - tile_road_intersection_8
+  - tile_road_intersection_5
+  - tile_road_intersection_4
+  - tile_road_intersection_7
+  - tile_road_intersection_6
+  - tile_road_intersection_1
+  - tile_road_intersection_0
+  - tile_road_intersection_3
+  - tile_road_intersection_2
+  - tile_road_intersection_14
+  - tile_road_intersection_15
+  - tile_road_intersection_10
+  - tile_road_intersection_11
+  - tile_road_intersection_12
+  - tile_road_intersection_13
+  m_RenderDataMap: {}
+  m_Tag: TileAtlas
+  m_IsVariant: 0
