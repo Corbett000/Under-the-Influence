@@ -221,7 +221,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1488343242}
   offset: {x: 0, y: 0, z: 0}
-  camera: {fileID: 12926370}
 --- !u!213 &14052037
 Sprite:
   m_ObjectHideFlags: 0
@@ -624,11 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 141446911}
-  tilemap_walls: {fileID: 0}
-  tilemap_overlay: {fileID: 0}
   tileset: {fileID: 266363896}
-  player: {fileID: 1488343242}
-  camera: {fileID: 12926370}
 --- !u!1 &266363893
 GameObject:
   m_ObjectHideFlags: 0
