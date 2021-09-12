@@ -26,7 +26,7 @@ public class procedural : MonoBehaviour {
     private bool lb_last_intersection = false;
     private bool rb_last_intersection = false;
 
-    private int leftside = -10;
+    private int leftside = -15;
     private int leftroad;
     private int buildings1;
     private int middleroad;
@@ -227,7 +227,7 @@ public class procedural : MonoBehaviour {
         middleroad = buildings1+5;
         buildings2 = middleroad+6;
         rightroad = buildings2+5;
-        rightside = rightroad+1;
+        rightside = rightroad+6;
         var camext = new Vector2(camera.orthographicSize * Screen.width/Screen.height, camera.orthographicSize);
         var cammin = tilemap.WorldToCell((Vector2)camera.transform.position - camext);
         ybound = cammin.y-20;

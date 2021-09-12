@@ -7,8 +7,8 @@ public class CameraFollow : MonoBehaviour {
     public Vector3 offset;
     public Camera camera;
 
-    private int leftside = -9;
-    private int rightside = 28-9;
+    private int leftside = -14;
+    private int rightside = 28-14;
 
     void Start() {
         offset = transform.position - player.transform.position;
