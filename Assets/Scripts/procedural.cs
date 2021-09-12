@@ -5,6 +5,8 @@ using UnityEngine.Tilemaps;
 
 public class procedural : MonoBehaviour {
     public Tilemap tilemap;
+    public Tilemap tilemap_walls;
+    public Tilemap tilemap_overlay;
     public Tilemap tileset;
     public GameObject player;
     public Camera camera;
@@ -40,17 +42,28 @@ public class procedural : MonoBehaviour {
             }
         }
     }
+    void placeBorderAt(int x,int y) {
+        tilemap_walls.SetTile(new Vector3Int(x,y,0),tileset.GetTile(new Vector3Int(1,0,0)));
+    }
+    void placeSixBordersAt(int x,int y) {
+        for (int yp = 0; yp >= -5; yp--) {
+            tilemap_walls.SetTile(new Vector3Int(x,yp+y,0),tileset.GetTile(new Vector3Int(1,0,0)));
+        }
+    }
     void placeBuildingAt(int x,int y,int building) {
         for (int xp = 0; xp < 5; xp++) {
             for (int yp = 0; yp > -5; yp--) {
-                tilemap.SetTile(new Vector3Int(xp+x, yp+y, 0),tileset.GetTile(new Vector3Int(xp+2+building*5, yp+5, 0)));
+                var empt = (building>0 && xp<2 && yp<-2)||(building>1 && xp>2 && yp>-2);
+                (empt?tilemap:tilemap_walls).SetTile(new Vector3Int(xp+x, yp+y, 0),tileset.GetTile(new Vector3Int(xp+2+building*5, yp+5, 0)));
             }
         }
     }
     void placeStationAt(int x,int y,int station) {
         for (int xp = 0; xp < 5; xp++) {
             for (int yp = 0; yp > -3; yp--) {
-                tilemap.SetTile(new Vector3Int(xp+x, yp+y, 0),tileset.GetTile(new Vector3Int(xp+6, yp-1-station*3, 0)));
+                var empt = (station!=1)&&xp==2&&yp!=-1;
+                var overl = (station==0&&xp<3)||(station==1&&xp!=2)||(station==2&&xp>1);
+                (empt?tilemap:overl?tilemap_overlay:tilemap_walls).SetTile(new Vector3Int(xp+x, yp+y, 0),tileset.GetTile(new Vector3Int(xp+6, yp-1-station*3, 0)));
             }
         }
     }
@@ -92,9 +105,11 @@ public class procedural : MonoBehaviour {
                 l_road_bound+=6;
                 m_road_bound+=6;
                 r_road_bound+=6;
+                placeSixBordersAt(leftside,l_road_bound);
                 placeIntersectionAt(leftroad,l_road_bound,false,false);
                 placeIntersectionAt(middleroad,m_road_bound,false,false);
                 placeIntersectionAt(rightroad,r_road_bound,false,false);
+                placeSixBordersAt(rightside,r_road_bound);
                 lb_bound+=6;
                 rb_bound+=6;
                 placeEastRoadAt(buildings1,lb_bound);
@@ -129,6 +144,7 @@ public class procedural : MonoBehaviour {
                         if (l_road_bound!=ybound || m_road_bound!=ybound || lb_last_intersection) continue;
                         l_road_bound+=6;
                         m_road_bound+=6;
+                        placeSixBordersAt(leftside,l_road_bound);
                         placeIntersectionAt(leftroad,l_road_bound,false,false);
                         placeIntersectionAt(middleroad,m_road_bound,false,true);
                         lb_bound+=6;
@@ -172,6 +188,7 @@ public class procedural : MonoBehaviour {
                         r_road_bound+=6;
                         placeIntersectionAt(middleroad,m_road_bound,true,false);
                         placeIntersectionAt(rightroad,r_road_bound,false,false);
+                        placeSixBordersAt(rightside,r_road_bound);
                         rb_bound+=6;
                         placeEastRoadAt(buildings2,rb_bound);
                         rb_last_building=false;
@@ -188,6 +205,7 @@ public class procedural : MonoBehaviour {
             }
             while (l_road_bound<=ybound) {
                 l_road_bound++;
+                placeBorderAt(leftside,l_road_bound);
                 placeNorthRoadAt(leftroad,l_road_bound,false);
             }
             while (m_road_bound<=ybound) {
@@ -196,16 +214,10 @@ public class procedural : MonoBehaviour {
             }
             while (r_road_bound<=ybound) {
                 r_road_bound++;
+                placeBorderAt(rightside,r_road_bound);
                 placeNorthRoadAt(rightroad,r_road_bound,false);
             }
             ybound+=1;
-
-            // placeIntersectionAt(-5,5);
-            // placeIntersectionAt(-5,5);
-            // placeIntersectionAt(-5,5);
-            // placeNorthRoadAt(-5,-1,true);
-            // placeNorthRoadAt(-5,-2,false);
-            // placeEastRoadAt(1,5);
         }
 
     }
@@ -218,13 +230,13 @@ public class procedural : MonoBehaviour {
         rightside = rightroad+1;
         var camext = new Vector2(camera.orthographicSize * Screen.width/Screen.height, camera.orthographicSize);
         var cammin = tilemap.WorldToCell((Vector2)camera.transform.position - camext);
-        ybound = cammin.y;
-        lb_bound = cammin.y;
-        rb_bound = cammin.y;
+        ybound = cammin.y-20;
+        lb_bound = cammin.y-20;
+        rb_bound = cammin.y-20;
 
-        l_road_bound = cammin.y;
-        m_road_bound = cammin.y;
-        r_road_bound = cammin.y;
+        l_road_bound = cammin.y-20;
+        m_road_bound = cammin.y-20;
+        r_road_bound = cammin.y-20;
 
         generateRoadUnits();
     }
