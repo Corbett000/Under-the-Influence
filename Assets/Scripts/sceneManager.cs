@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class ScriptableUI : MonoBehaviour
+public class sceneManager : MonoBehaviour
 {
-    public GameObject player;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +16,9 @@ public class ScriptableUI : MonoBehaviour
     {
         
     }
-    
+
+    public void toPlayScene()
+    {
+        SceneManager.LoadScene(sceneBuildIndex:1); 
+    }
 }

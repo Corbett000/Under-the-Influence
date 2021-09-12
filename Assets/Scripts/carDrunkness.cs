@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScriptableUI : MonoBehaviour
+public class carDrunkness : MonoBehaviour
 {
-    public GameObject player;
+
+    public float drunkfactor = 0f;
+
+    Rigidbody2D carRigidbody2D;
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,5 +21,4 @@ public class ScriptableUI : MonoBehaviour
     {
         
     }
-    
 }

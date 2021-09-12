@@ -9,6 +9,7 @@ public class carcontroller : MonoBehaviour
     public float turnFactor = 3.5f; 
     public float driftFactor = 0.95f;
     public Sprite[] carSkins;
+    public GameObject[] woahNellyPrefabs;
 
     float accelerationInput = 0;
     float steeringInput = 0;
@@ -26,24 +27,18 @@ public class carcontroller : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("oiajsodifjaoaosidjfoaisjdfsidjfowe760389475029834750293845aisjdf");
         //spawn with random car skin
         carSpriteRenderer.sprite = carSkins[Random.Range(0,carSkins.Length-1)];
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
     }
 
-    public void OnTriggerEnter(Collider other) {
-        Debug.Log("oiajsodifjaosidjfoaisjdf");
+    public void OnTriggerEnter2D(Collider2D other) {
+        Instantiate(woahNellyPrefabs[Random.Range(0,woahNellyPrefabs.Length-1)], transform.position, Quaternion.identity);
+        Destroy(other.gameObject);
     }
-
-    public void OnCollisionEnter(Collision collision) {
-        Debug.Log("oiajsodifjaoaosidjfoaisjdfsidjfoaisjdf");
-    }
-
 
     //frame rate independent stuff
     void FixedUpdate()
