@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AgentScript : MonoBehaviour
-{
-    [SerializeField] Transform target;
+public class AgentScript : MonoBehaviour {
+    
+    public Sprite[] carSkins;
+    Rigidbody2D carRigidbody2D;
+    SpriteRenderer carSpriteRenderer;
+    void Awake() {
+        carRigidbody2D = GetComponent<Rigidbody2D>();
+        carSpriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
-    private NavMeshAgent agent;
-    // Start is called before the first frame update
-    void Start()
-    {
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+    void OnCollisionEnter2D(Collision2D collision) {
+        Destroy(this);
     }
-    void Update()
-    {
-        agent.SetDestination(new Vector2(10.8f, 0.37f));
+
+    void Start() {
+        carSpriteRenderer.sprite = carSkins[Random.Range(0,carSkins.Length)];
     }
-    // Update is called once per frame
+    void Update() {
+        carRigidbody2D.velocity = transform.up*2;
+    }
 }

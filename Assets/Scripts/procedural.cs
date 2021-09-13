@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class procedural : MonoBehaviour {
     public GameObject beerPrefab;
+    public GameObject rivalPrefab;
 
     public Tilemap tilemap;
     public Tilemap tilemap_walls;
@@ -113,6 +114,20 @@ public class procedural : MonoBehaviour {
                 l_road_bound+=6;
                 m_road_bound+=6;
                 r_road_bound+=6;
+
+                Instantiate(rivalPrefab, new Vector3(leftroad,l_road_bound - 0.5f, 0), Quaternion.AngleAxis(90, Vector3.forward));
+                Instantiate(rivalPrefab, new Vector3(middleroad,m_road_bound - 0.5f, 0), Quaternion.AngleAxis(90, Vector3.forward));
+                Instantiate(rivalPrefab, new Vector3(rightroad,r_road_bound - 0.5f, 0), Quaternion.AngleAxis(90, Vector3.forward));
+                Instantiate(rivalPrefab, new Vector3(leftroad+5,l_road_bound - 1.5f, 0), Quaternion.AngleAxis(90, Vector3.forward));
+                Instantiate(rivalPrefab, new Vector3(middleroad+5,m_road_bound - 1.5f, 0), Quaternion.AngleAxis(90, Vector3.forward));
+                Instantiate(rivalPrefab, new Vector3(rightroad+5,r_road_bound - 1.5f, 0), Quaternion.AngleAxis(90, Vector3.forward));
+                Instantiate(rivalPrefab, new Vector3(leftroad,l_road_bound - 2.5f, 0), Quaternion.AngleAxis(270, Vector3.forward));
+                Instantiate(rivalPrefab, new Vector3(middleroad,m_road_bound - 2.5f, 0), Quaternion.AngleAxis(270, Vector3.forward));
+                Instantiate(rivalPrefab, new Vector3(rightroad,r_road_bound - 2.5f, 0), Quaternion.AngleAxis(270, Vector3.forward));
+                Instantiate(rivalPrefab, new Vector3(leftroad+5,l_road_bound - 3.5f, 0), Quaternion.AngleAxis(270, Vector3.forward));
+                Instantiate(rivalPrefab, new Vector3(middleroad+5,m_road_bound - 3.5f, 0), Quaternion.AngleAxis(270, Vector3.forward));
+                Instantiate(rivalPrefab, new Vector3(rightroad+5,r_road_bound - 3.5f, 0), Quaternion.AngleAxis(270, Vector3.forward));
+
                 placeSixBordersAt(leftside,l_road_bound);
                 placeIntersectionAt(leftroad,l_road_bound,false,false);
                 placeIntersectionAt(middleroad,m_road_bound,false,false);
@@ -155,6 +170,16 @@ public class procedural : MonoBehaviour {
                         placeSixBordersAt(leftside,l_road_bound);
                         placeIntersectionAt(leftroad,l_road_bound,false,false);
                         placeIntersectionAt(middleroad,m_road_bound,false,true);
+
+                        Instantiate(rivalPrefab, new Vector3(leftroad+1.5f,l_road_bound, 0), Quaternion.identity);
+                        Instantiate(rivalPrefab, new Vector3(middleroad+1.5f,m_road_bound, 0), Quaternion.identity);
+                        Instantiate(rivalPrefab, new Vector3(leftroad+2.5f,l_road_bound+5, 0), Quaternion.identity);
+                        Instantiate(rivalPrefab, new Vector3(middleroad+2.5f,m_road_bound+5, 0), Quaternion.identity);
+                        Instantiate(rivalPrefab, new Vector3(leftroad+3.5f,l_road_bound, 0), Quaternion.AngleAxis(180, Vector3.forward));
+                        Instantiate(rivalPrefab, new Vector3(middleroad+3.5f,m_road_bound, 0), Quaternion.AngleAxis(180, Vector3.forward));
+                        Instantiate(rivalPrefab, new Vector3(leftroad+4.5f,l_road_bound+5, 0), Quaternion.AngleAxis(180, Vector3.forward));
+                        Instantiate(rivalPrefab, new Vector3(middleroad+4.5f,m_road_bound+5, 0), Quaternion.AngleAxis(180, Vector3.forward));
+
                         lb_bound+=6;
                         placeEastRoadAt(buildings1,lb_bound);
                         lb_last_building=false;
@@ -196,6 +221,16 @@ public class procedural : MonoBehaviour {
                         r_road_bound+=6;
                         placeIntersectionAt(middleroad,m_road_bound,true,false);
                         placeIntersectionAt(rightroad,r_road_bound,false,false);
+
+                        Instantiate(rivalPrefab, new Vector3(rightroad+1.5f,r_road_bound, 0), Quaternion.identity);
+                        Instantiate(rivalPrefab, new Vector3(middleroad+1.5f,m_road_bound, 0), Quaternion.identity);
+                        Instantiate(rivalPrefab, new Vector3(rightroad+2.5f,r_road_bound+5, 0), Quaternion.identity);
+                        Instantiate(rivalPrefab, new Vector3(middleroad+2.5f,m_road_bound+5, 0), Quaternion.identity);
+                        Instantiate(rivalPrefab, new Vector3(rightroad+3.5f,r_road_bound, 0), Quaternion.AngleAxis(180, Vector3.forward));
+                        Instantiate(rivalPrefab, new Vector3(middleroad+3.5f,m_road_bound, 0), Quaternion.AngleAxis(180, Vector3.forward));
+                        Instantiate(rivalPrefab, new Vector3(rightroad+4.5f,r_road_bound+5, 0), Quaternion.AngleAxis(180, Vector3.forward));
+                        Instantiate(rivalPrefab, new Vector3(middleroad+4.5f,m_road_bound+5, 0), Quaternion.AngleAxis(180, Vector3.forward));
+
                         placeSixBordersAt(rightside,r_road_bound);
                         rb_bound+=6;
                         placeEastRoadAt(buildings2,rb_bound);

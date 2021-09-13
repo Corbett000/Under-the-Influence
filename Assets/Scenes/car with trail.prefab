@@ -149,6 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3234135494ba64bbbd873d89150fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  drunkfactor: 0.3
   accelerationFactor: 25
   turnFactor: 6
   driftFactor: 0.85
@@ -160,6 +162,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f5687033f75d9c843821c75c6213e069, type: 3}
   - {fileID: 21300000, guid: 5c814bd4ce6dc3e4ab59203032cfa040, type: 3}
   - {fileID: 21300000, guid: 23352dac5a87bff40a39b8dfb212fd65, type: 3}
+  woahNellyPrefabs:
+  - {fileID: 8750123725518401659, guid: 78572ce0753354dffae5eebdf2a344f8, type: 3}
+  - {fileID: 6389683892832915285, guid: 7f0a6899d1ce3482fb3170e83afb2649, type: 3}
+  - {fileID: 1564505003504521756, guid: dc81cf28e9c5e46a28f8e1f70a30e1e4, type: 3}
+  velocityCap: 20
+  steeringInput: 0
 --- !u!114 &243113254843128476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +261,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.25438207
+        value: 0.12693304
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -382,7 +390,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.25438207
+        value: 0.12693304
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -510,8 +518,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.25438207
+        time: 0.016359294
+        value: 0.12693334
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -640,7 +648,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.25438207
+        value: 0.12693304
         inSlope: 0
         outSlope: 0
         tangentMode: 0

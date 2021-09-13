@@ -34,12 +34,15 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
     - {fileID: 2800000, guid: c7869e760101649498df199eb20fc773, type: 3}
     - {fileID: 2800000, guid: a362642ac2f34495b891ad3b386ef179, type: 3}
-    totalSpriteSurfaceArea: 39936
+    - {fileID: 2800000, guid: 79885625a48c44bf380537f572a59d54, type: 3}
+    totalSpriteSurfaceArea: 41984
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 6979574314577927308, guid: 79885625a48c44bf380537f572a59d54, type: 3}
+  - {fileID: -3770305757691086436, guid: 79885625a48c44bf380537f572a59d54, type: 3}
   - {fileID: -4998583175805728209, guid: c7869e760101649498df199eb20fc773, type: 3}
   - {fileID: 7498883752154785644, guid: c7869e760101649498df199eb20fc773, type: 3}
   - {fileID: 2304061769715766967, guid: c7869e760101649498df199eb20fc773, type: 3}
@@ -80,6 +83,8 @@ SpriteAtlas:
   - {fileID: 4076920173941737853, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
   - {fileID: 4128317576625314501, guid: 7a9e509b6b25b4132b61aee9c580c48c, type: 3}
   m_PackedSpriteNamesToIndex:
+  - tile_road_simple_p2_1
+  - tile_road_simple_p2_0
   - tile_road_simple_0
   - tile_road_simple_1
   - tile_road_simple_2
