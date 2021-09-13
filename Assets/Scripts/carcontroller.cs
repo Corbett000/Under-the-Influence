@@ -42,7 +42,10 @@ public class carcontroller : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D other) {
         Instantiate(woahNellyPrefabs[Random.Range(0,woahNellyPrefabs.Length)], transform.position, Quaternion.identity);
         Destroy(other.gameObject);
-        inventory.beerInInventory += 1;
+        if (inventory.beerInInventory < 5)
+        {
+            inventory.beerInInventory += 1;
+        }
     }
 
     //frame rate independent stuff
