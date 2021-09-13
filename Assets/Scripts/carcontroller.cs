@@ -12,6 +12,7 @@ public class carcontroller : MonoBehaviour {
     public Sprite[] carSkins;
     public GameObject[] woahNellyPrefabs;
     public float velocityCap = 20f;
+    public Vector2 startPosition;
 
     float accelerationInput = 0;
     public float steeringInput = 0;
@@ -29,6 +30,7 @@ public class carcontroller : MonoBehaviour {
 
     void Start()
     {
+        startPosition = transform.position;
         //spawn with random car skin
         carSpriteRenderer.sprite = carSkins[Random.Range(0,carSkins.Length)];
     }
