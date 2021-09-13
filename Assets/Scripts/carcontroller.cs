@@ -13,6 +13,8 @@ public class carcontroller : MonoBehaviour {
     public Sprite[] carSkins;
     public GameObject[] woahNellyPrefabs;
     public float velocityCap = 6f;
+    public Vector2 postition = new Vector2(0, 0);
+    public int score = 0;
 
     float accelerationInput = 0;
     public float steeringInput = 0;
@@ -21,6 +23,7 @@ public class carcontroller : MonoBehaviour {
     //components 
     Rigidbody2D carRigidbody2D;
     SpriteRenderer carSpriteRenderer;
+    public ScriptableUI sUI;
 
     void Awake()
     {
@@ -54,6 +57,7 @@ public class carcontroller : MonoBehaviour {
         ApplyEngineForce();
         KillOrthogonalVelocity();
         ApplySteering();
+        CheckScore();
         drunkfactor -= .0001f;
     }
 
@@ -93,5 +97,13 @@ public class carcontroller : MonoBehaviour {
         Vector2 forwardVelocity = transform.up * Vector2.Dot(carRigidbody2D.velocity, transform.up);
         Vector2 rightVelocity = transform.right * Vector2.Dot(carRigidbody2D.velocity, transform.right);
         carRigidbody2D.velocity = forwardVelocity + rightVelocity * driftFactor;
+    }
+
+    public void CheckScore()
+    {
+        postition = this.gameObject.transform.position;
+        score = (int) Mathf.Max(score, postition.magnitude);
+
+        sUI.UpdateScore(score);
     }
 }

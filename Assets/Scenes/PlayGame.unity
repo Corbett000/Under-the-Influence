@@ -1141,7 +1141,7 @@ GameObject:
   - component: {fileID: 182224256}
   - component: {fileID: 182224255}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1161,9 +1161,9 @@ RectTransform:
   m_Father: {fileID: 372566340}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.9825, y: 107}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 18.9825, y: -30}
   m_SizeDelta: {x: 657.6066, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &182224255
@@ -4457,6 +4457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1488343242}
+  score: {fileID: 182224255}
 --- !u!1001 &667336287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4464,6 +4465,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1584423847557547796, guid: df49106b4dfef4dd48b32549d279805d, type: 3}
+      propertyPath: sUI
+      value: 
+      objectReference: {fileID: 372566341}
     - target: {fileID: 1584423847557547796, guid: df49106b4dfef4dd48b32549d279805d, type: 3}
       propertyPath: turnFactor
       value: 11
