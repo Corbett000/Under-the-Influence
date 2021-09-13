@@ -19,6 +19,11 @@ public class sceneManager : MonoBehaviour
 
     public void toPlayScene()
     {
-        SceneManager.LoadScene(sceneBuildIndex:1); 
+        SceneManager.LoadScene(sceneBuildIndex: 1); 
+    }
+
+    public void toCredits()
+    {
+        SceneManager.LoadScene(sceneBuildIndex: 2);
     }
 }
