@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class carcontroller : MonoBehaviour {
     public carcontroller controller;
+    public BeerInventory inventory;
 
     public float drunkfactor = .3f;
     public float accelerationFactor = 30.0f;
@@ -11,7 +12,7 @@ public class carcontroller : MonoBehaviour {
     public float driftFactor = 0.95f;
     public Sprite[] carSkins;
     public GameObject[] woahNellyPrefabs;
-    public float velocityCap = 20f;
+    public float velocityCap = 6f;
 
     float accelerationInput = 0;
     public float steeringInput = 0;
@@ -25,6 +26,7 @@ public class carcontroller : MonoBehaviour {
     {
         carRigidbody2D = GetComponent<Rigidbody2D>();
         carSpriteRenderer = GetComponent<SpriteRenderer>();
+        inventory = this.gameObject.GetComponent<BeerInventory>();
     }
 
     void Start()
@@ -40,6 +42,7 @@ public class carcontroller : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D other) {
         Instantiate(woahNellyPrefabs[Random.Range(0,woahNellyPrefabs.Length)], transform.position, Quaternion.identity);
         Destroy(other.gameObject);
+        inventory.beerInInventory += 1;
     }
 
     //frame rate independent stuff
@@ -48,17 +51,18 @@ public class carcontroller : MonoBehaviour {
         ApplyEngineForce();
         KillOrthogonalVelocity();
         ApplySteering();
+        drunkfactor -= .0001f;
     }
 
     void ApplyEngineForce()
     {
         if (accelerationInput > 0)
         {
-            accelerationFactor = velocityCap*drunkfactor - carRigidbody2D.velocity.magnitude;
+            accelerationFactor = velocityCap - carRigidbody2D.velocity.magnitude;
         }
         else
         {
-            accelerationFactor = velocityCap*drunkfactor + carRigidbody2D.velocity.magnitude;
+            accelerationFactor = velocityCap + carRigidbody2D.velocity.magnitude;
         }
         //create a force
         Vector2 engineForceVector = transform.up * accelerationInput * accelerationFactor;
@@ -76,7 +80,7 @@ public class carcontroller : MonoBehaviour {
 
     public void SetInputVector(Vector2 inputVector)
     {
-        steeringInput = inputVector.x + (float)(.5*drunkfactor * Mathf.Sin(Time.time));
+        steeringInput = inputVector.x + (float)(.25*drunkfactor * Mathf.Sin(Time.time));
         accelerationInput = inputVector.y;
     }
 
