@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class carcontroller : MonoBehaviour {
     public carcontroller controller;
@@ -25,6 +26,7 @@ public class carcontroller : MonoBehaviour {
     Rigidbody2D carRigidbody2D;
     SpriteRenderer carSpriteRenderer;
     public ScriptableUI sUI;
+    public Slider drunkMeter;
 
     void Awake()
     {
@@ -63,6 +65,7 @@ public class carcontroller : MonoBehaviour {
         if (drunkfactor<.1) {
             SceneManager.LoadScene(sceneBuildIndex: 0);
         }
+        drunkMeter.value = drunkfactor;
     }
 
     void ApplyEngineForce()
