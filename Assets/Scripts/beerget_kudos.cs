@@ -6,7 +6,7 @@ public class beerget_kudos : MonoBehaviour {
     private Vector2 floatdir;
     // Start is called before the first frame update
     void Start() {
-        var randdir = (float)Random.Range(0,3.14159f*2);
+        var randdir = (float)Random.Range(0,3.14159f);
         floatdir = new Vector2(Mathf.Cos(randdir),Mathf.Sin(randdir));
         Destroy(this.gameObject,2);
         // var col = gameObject.GetComponent<Renderer>().material.color;
