@@ -4256,7 +4256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1584423847557547796, guid: df49106b4dfef4dd48b32549d279805d, type: 3}
       propertyPath: velocityCap
-      value: 20
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1584423847557547796, guid: df49106b4dfef4dd48b32549d279805d, type: 3}
       propertyPath: woahNellyPrefabs.Array.size
@@ -4571,6 +4571,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1584423847557547800, guid: df49106b4dfef4dd48b32549d279805d, type: 3}
   m_PrefabInstance: {fileID: 667336287}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1488343243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488343242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02003bc43d644800a0d80015753a747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beerInInventory: 3
 --- !u!114 &1488343249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4583,10 +4596,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d7638d449204a14b8be31e4c889f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  drunkfactor: 3
-  framenum: 0
-  carRigidbody2D: {fileID: 0}
 --- !u!1 &1633162722
 GameObject:
   m_ObjectHideFlags: 0
