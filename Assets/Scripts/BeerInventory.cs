@@ -5,6 +5,8 @@ using UnityEngine;
 public class BeerInventory : MonoBehaviour
 {
     public int beerInInventory = 45;
+
+    public PostProcessingController ppController;
     carcontroller controller;
 
     // Start is called before the first frame update
@@ -23,6 +25,9 @@ public class BeerInventory : MonoBehaviour
                 controller.drunkfactor += .1f;
                 beerInInventory -= 1;
                 Debug.Log(beerInInventory);
+
+                //Queues an effect for the post processing controller to run with the current drunkfactor as intensity
+                ppController.QueueRandomEffect(controller.drunkfactor);
             }
         }
     }

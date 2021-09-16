@@ -44,8 +44,7 @@ public class carcontroller : MonoBehaviour {
     // Update is called once per frame
     void Update() {
     }
-
-    public void OnTriggerEnter2D(Collider2D other) {
+        public void OnTriggerEnter2D(Collider2D other) {
         Instantiate(woahNellyPrefabs[Random.Range(0,woahNellyPrefabs.Length)], transform.position, Quaternion.identity);
         Destroy(other.gameObject);
         if (inventory.beerInInventory < 5)
