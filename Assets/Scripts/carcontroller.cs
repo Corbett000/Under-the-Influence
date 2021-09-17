@@ -16,6 +16,7 @@ public class carcontroller : MonoBehaviour {
     public GameObject[] woahNellyPrefabs;
     public float velocityCap = 6f;
     public Vector2 postition = new Vector2(0, 0);
+    public float drunkSteering = 0f;
     public int score = 0;
 
     float accelerationInput = 0;
@@ -63,7 +64,7 @@ public class carcontroller : MonoBehaviour {
         drunkfactor -= .0001f;
         if (drunkfactor<.1) {
             SceneManager.LoadScene(sceneBuildIndex: 0);
-        }
+        }   
         drunkMeter.value = drunkfactor;
     }
 
@@ -93,7 +94,7 @@ public class carcontroller : MonoBehaviour {
 
     public void SetInputVector(Vector2 inputVector)
     {
-        steeringInput = inputVector.x + (float)(.25*drunkfactor * Mathf.Sin(Time.time));
+        steeringInput = inputVector.x + drunkSteering * (float)(.25*drunkfactor * Mathf.Sin(Time.time));
         accelerationInput = inputVector.y;
     }
 

@@ -57,7 +57,7 @@ public class PostProcessingController : MonoBehaviour
     public void QueueRandomEffect(float intensity)
     {
         //Make sure the range is (0, # of effects)
-        currentEffects.Enqueue((int)Random.Range(0, 3));
+        currentEffects.Enqueue((int)Random.Range(0, 4));
     }
 
 
@@ -74,6 +74,12 @@ public class PostProcessingController : MonoBehaviour
             case 2:
                 playerScript.driftFactor = DRUNK_DRIFT_FACTOR;
                 break;
+            case 3:
+                playerScript.drunkSteering = 1f;
+                break;
+            default:
+                Debug.Log("Undefined effect number " + effect + " in PostProcessingController.ComputeEffect()");
+                break;
         }
     }
 
@@ -81,20 +87,23 @@ public class PostProcessingController : MonoBehaviour
     {
         if (currentEffects.Contains(effect)) return;
 
-        if (effect == 0)
+        switch(effect)
         {
-            vignette.intensity.value = 0;
-            return;
-        }
-
-        if (effect == 1)
-        {
-            cAberration.intensity.value = 0;
-        }
-
-        if (effect == 2)
-        {
-            playerScript.driftFactor = DEFAULT_DRIFT_FACTOR;
+            case 0:
+                vignette.intensity.value = 0;
+                break;
+            case 1:
+                cAberration.intensity.value = 0;
+                break;
+            case 2:
+                playerScript.driftFactor = DEFAULT_DRIFT_FACTOR;
+                break;
+            case 3:
+                playerScript.drunkSteering = 0;
+                break;
+            default:
+                Debug.Log("Undefined effect number " + effect + " in PostProcessingController.EndEffect()");
+                break;
         }
     }
 }
