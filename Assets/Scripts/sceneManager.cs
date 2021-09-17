@@ -5,18 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class sceneManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void toPlayScene()
     {
         SceneManager.LoadScene(sceneBuildIndex: 1); 
@@ -25,5 +13,10 @@ public class sceneManager : MonoBehaviour
     public void toCredits()
     {
         SceneManager.LoadScene(sceneBuildIndex: 2);
+    }
+
+    public void toMenu()
+    {
+        SceneManager.LoadScene(sceneBuildIndex: 0);
     }
 }
