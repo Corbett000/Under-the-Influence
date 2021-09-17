@@ -5056,6 +5056,10 @@ PrefabInstance:
       propertyPath: velocityCap
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 243113254843128478, guid: 11faf0febfcabaf41bd7abd72ab9ab2e, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1584423847557547796, guid: df49106b4dfef4dd48b32549d279805d, type: 3}
       propertyPath: turnFactor
       value: 11
