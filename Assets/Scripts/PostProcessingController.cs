@@ -20,6 +20,8 @@ public class PostProcessingController : MonoBehaviour
     Queue currentEffects = new Queue();
 
     public carcontroller playerScript;
+    public Camera myCamera;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -57,7 +59,7 @@ public class PostProcessingController : MonoBehaviour
     public void QueueRandomEffect(float intensity)
     {
         //Make sure the range is (0, # of effects)
-        currentEffects.Enqueue((int)Random.Range(0, 4));
+        currentEffects.Enqueue((int)Random.Range(0, 5));
     }
 
 
@@ -69,13 +71,16 @@ public class PostProcessingController : MonoBehaviour
                 vignette.intensity.value = Mathf.Sin(Time.realtimeSinceStartup);
                 break;
             case 1:
-                cAberration.intensity.value = 1f;
+                cAberration.intensity.value = 2 * playerScript.drunkfactor;
                 break;
             case 2:
                 playerScript.driftFactor = DRUNK_DRIFT_FACTOR;
                 break;
             case 3:
-                playerScript.drunkSteering = 1f;
+                playerScript.drunkSteering = 2 * playerScript.drunkfactor;
+                break;
+            case 4:
+                myCamera.orthographicSize = 2 + Mathf.Abs((2)*(Mathf.Sin(Time.time)));
                 break;
             default:
                 Debug.Log("Undefined effect number " + effect + " in PostProcessingController.ComputeEffect()");
@@ -100,6 +105,9 @@ public class PostProcessingController : MonoBehaviour
                 break;
             case 3:
                 playerScript.drunkSteering = 0;
+                break;
+            case 4:
+                myCamera.orthographicSize = 2;
                 break;
             default:
                 Debug.Log("Undefined effect number " + effect + " in PostProcessingController.EndEffect()");
