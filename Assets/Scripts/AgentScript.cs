@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class AgentScript : MonoBehaviour {
-    
     public Sprite[] carSkins;
     Rigidbody2D carRigidbody2D;
     SpriteRenderer carSpriteRenderer;
